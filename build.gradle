@@ -1,0 +1,34 @@
+
+plugins {
+    id "org.kravemir.gradle.sass" version "1.2.2"
+    id "application"
+}
+
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'maven'
+
+group = 'io.josevjunior'
+
+application{
+    mainClassName = 'io.josevjunior.primejfx.App'
+}
+    
+repositories {
+    jcenter()
+}
+
+dependencies {
+    //implementation 'de.jensd:fontawesomefx:8.9'
+    compile 'de.jensd:fontawesomefx-fontawesome:4.6.1'
+
+    testCompile 'junit:junit:4.12'
+}
+
+sass {
+    main {
+        srcDir = file("$projectDir/src/main/resources/scss")
+        outDir = file("$projectDir/src/main/resources/css")
+        include = "app.scss"
+    }
+}

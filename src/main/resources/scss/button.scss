@@ -1,0 +1,47 @@
+
+@import "base";
+
+%button-base{
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: #ffffff;
+}
+
+.button{
+    @extend %button-base;
+}
+
+%button-base-focused{
+    -fx-background-color: -faint-color, derive(-primary-color, 15%);
+    -fx-background-insets: -2, 0, 2, -1.4, 2.6;
+}
+
+.button:focused{
+    @extend %button-base-focused;
+}
+
+%button-base-hover{
+    -fx-background-color: derive(-primary-color, -15%);
+}
+
+.button:hover{
+    @extend %button-base-hover;
+}
+
+%button-base-focused{
+    -fx-background-color: -faint-color, derive(-primary-color, -15%);
+    -fx-background-insets: -2, 0, 2, -1.4, 2.6;
+}
+
+.button:hover:focused{
+    @extend %button-base-focused;
+}
+
+%button-pressed{
+    -fx-background-color: derive(-primary-color, -30%);
+}
+
+.button:pressed{
+    @extend %button-pressed;
+}
+
